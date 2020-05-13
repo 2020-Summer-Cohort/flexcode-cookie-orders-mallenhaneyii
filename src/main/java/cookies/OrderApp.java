@@ -19,15 +19,34 @@ public class OrderApp {
         System.out.println();
         System.out.println("You have orders " + myOrder.getTotalBoxes() + " boxes");
         System.out.println();
-        System.out.println("What would you like to remove? (specify a variety of none)");
+        System.out.println("What would you like to do?");
+        System.out.println("1. Add an order");
+        System.out.println("2. Remove an order");
+        System.out.println("3. Update an order");
+        System.out.println("4. All done");
+        String userAction = input.nextLine();
 
-        String varietyToRemove = input.nextLine();
+        while(userAction != "4"){
 
-        System.out.println("You are removing " + myOrder.getVarietyBoxes(varietyToRemove) + " " + varietyToRemove);
-        System.out.println();
-        myOrder.removeVariety(varietyToRemove);
-        System.out.println("Current Order");
-        myOrder.showOrder();
+            if(userAction == "1"){
+                System.out.println("You would like to add an order. What variety of cookie would you like?");
+                String cookieType = input.nextLine();
+                System.out.println("How many boxes would you like to add?");
+                String numType = input.nextLine();
+                System.out.println("You are adding " + numType + " boxes of " + cookieType + " to a new order.");
+                //working on adding to Master Order
+            } else if (userAction == "2"){
+                System.out.println("You would like to remove an order. What variety of cookie would you like to remove?");
+                String varietyToRemove = input.nextLine();
+                System.out.println("You are removing " + myOrder.getVarietyBoxes(varietyToRemove) + varietyToRemove);
+                myOrder.removeVariety(varietyToRemove);
+            }else if(userAction == "3"){
+
+            }
+
+        }
+
+
 
 
 
